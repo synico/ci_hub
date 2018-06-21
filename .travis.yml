@@ -1,1 +1,9 @@
 language: java
+
+before_install:
+  mvn clean test
+
+install:
+  mvn package
+
+script:
