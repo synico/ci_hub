@@ -1,5 +1,8 @@
 language: java
 
+jdk:
+  - oraclejdk8
+
 before_install:
   mvn clean test
 
@@ -7,3 +10,4 @@ install:
   mvn package
 
 script:
+  mvn test
