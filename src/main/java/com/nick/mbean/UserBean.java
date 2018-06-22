@@ -13,6 +13,10 @@ import javax.faces.validator.ValidatorException;
 @SessionScoped
 public class UserBean {
 
+    private UserBean() {
+        System.out.println("UserBean is initializing...");
+    }
+
     private String firstName;
     private String lastName;
     private String sex;
@@ -67,7 +71,7 @@ public class UserBean {
     public void setServiceLevel(String serviceLevel) {
         this.serviceLevel = serviceLevel;
     }
-    
+
     public void validateEmail(FacesContext context, UIComponent toValidate, Object value) {
         String emailAddr = (String)value;
         if(emailAddr.indexOf("@") < 0) {
@@ -75,7 +79,7 @@ public class UserBean {
             throw new ValidatorException(message);
         }
     }
-    
+
     public String addConfirmedUser() {
         boolean added = true;
         FacesMessage doneMessage = null;
